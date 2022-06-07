@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Haha-li.github.io</id>
+    <title>Haha-li</title>
+    <updated>2022-06-07T09:15:57.483Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Haha-li.github.io"/>
+    <link rel="self" href="https://Haha-li.github.io/atom.xml"/>
+    <subtitle>不挣扎、不期待、不害怕</subtitle>
+    <logo>https://Haha-li.github.io/images/avatar.png</logo>
+    <icon>https://Haha-li.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, Haha-li</rights>
+    <entry>
+        <title type="html"><![CDATA[Docker基本用法]]></title>
+        <id>https://Haha-li.github.io/post/docker-ji-ben-yong-fa/</id>
+        <link href="https://Haha-li.github.io/post/docker-ji-ben-yong-fa/">
+        </link>
+        <updated>2022-06-07T09:08:46.000Z</updated>
+        <content type="html"><![CDATA[<p>1、基本<br>
+docker -version  #</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[甲骨文Ubuntu搭建EMBY与挂载google drive]]></title>
+        <id>https://Haha-li.github.io/post/jia-gu-wen-ubuntu-da-jian-emby-yu-gua-zai-google-drive/</id>
+        <link href="https://Haha-li.github.io/post/jia-gu-wen-ubuntu-da-jian-emby-yu-gua-zai-google-drive/">
+        </link>
+        <updated>2022-06-01T02:48:58.000Z</updated>
+        <summary type="html"><![CDATA[<p>一、安装emby<br>
+1、sudo -i<br>
+2、安装emby：   wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.7.2.0/emby-server-deb_4.7.2.0_arm64.deb<br>
+3、dpkg -i emby-server-deb_4.7.2.0_arm64.deb<br>
+4、访问： ip:8096<br>
+注意：如果你还是打不开那可能是因为端口未开放的缘故 Ubuntu系统下打开端口       iptables -F</p>
+<p>二、挂载google drive<br>
+1、安装rclone<br>
+注意：最好选择低版本，下载连接：https://downloads.rclone.org/v1.57.0/<br>
+最新版本：curl https://rclone.org/install.sh | sudo bash<br>
+2、配置<br>
+rclone config</p>
+<p>o remotes found - make a new one<br>
+n) New remote<br>
+s) Set configuration password<br>
+q) Quit config<br>
+n/s/q&gt; n</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一、安装emby<br>
+1、sudo -i<br>
+2、安装emby：   wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.7.2.0/emby-server-deb_4.7.2.0_arm64.deb<br>
+3、dpkg -i emby-server-deb_4.7.2.0_arm64.deb<br>
+4、访问： ip:8096<br>
+注意：如果你还是打不开那可能是因为端口未开放的缘故 Ubuntu系统下打开端口       iptables -F</p>
+<p>二、挂载google drive<br>
+1、安装rclone<br>
+注意：最好选择低版本，下载连接：https://downloads.rclone.org/v1.57.0/<br>
+最新版本：curl https://rclone.org/install.sh | sudo bash<br>
+2、配置<br>
+rclone config</p>
+<p>o remotes found - make a new one<br>
+n) New remote<br>
+s) Set configuration password<br>
+q) Quit config<br>
+n/s/q&gt; n</p>
+<!-- more -->
+<p>name emby 随意取 但是后面的代码也会相应改变</p>
+<!-- more -->
+<p>Choose a number from below, or type in your own value</p>
+<!-- more -->
+<p>选谷歌 （7） 可能会因为版本的不同而改变 注意选择 Google drive</p>
+<!-- more -->
+<p>client_id&gt; 直接回车</p>
+<!-- more -->
+<p>client_secret&gt; 直接回车</p>
+<!-- more -->
+<p>Choose a number from below, or type in your own value<br>
+scope&gt; 1 选1 有最大的使用权限。</p>
+<!-- more -->
+<p>ID of the root folder<br>
+Leave blank normally.<br>
+Fill in to access &quot;Computers&quot; folders (see docs), or for rclone to use<br>
+a non root folder as its starting point.<br>
+Note that if this is blank, the first time rclone runs it will fill it<br>
+in with the ID of the root folder.<br>
+Enter a string value. Press Enter for the default (&quot;&quot;).<br>
+root_folder_id&gt; 空，直接回车。空是跟路径如果想用别的根路径</p>
+<!-- more -->
+<p>Service Account Credentials JSON file path<br>
+Leave blank normally.<br>
+Needed only if you want use SA instead of interactive login.<br>
+Enter a string value. Press Enter for the default (&quot;&quot;).<br>
+service_account_file&gt; 直接回车</p>
+<!-- more -->
+<p>Edit advanced config? (y/n)<br>
+y) Yes<br>
+n) No (default)<br>
+y/n&gt; n 不用别的高级配置</p>
+<!-- more -->
+<p>Use auto config?</p>
+<p>Say Y if not sure<br>
+Say N if you are working on a remote or headless machine<br>
+y) Yes (default)<br>
+n) No<br>
+y/n&gt; n 因为我们是vps操作，不能auto config</p>
+<!-- more -->
+<p>Please go to the following link: https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>
+Log in and authorize rclone for access<br>
+Enter verification code&gt;贴入你获取到的key</p>
+<!-- more -->
+<p>Configure this as a team drive?<br>
+y) Yes<br>
+n) No (default)<br>
+y/n&gt; y</p>
+<!-- more -->
+<p>Choose a number from below, or type in your own value<br>
+1 / 盘1<br>
+\ &quot;0AGfwXXXXXXXXXXXX&quot;<br>
+2 / 盘2<br>
+\ &quot;0AXXXXXXXXXXXXXXX&quot;<br>
+Enter a Team Drive ID&gt;选择数字</p>
+<!-- more -->
+<p>y) Yes this is OK (default)<br>
+e) Edit this remote<br>
+d) Delete this remote<br>
+y/e/d&gt; y</p>
+<!-- more -->
+<p>e) Edit existing remote<br>
+n) New remote<br>
+d) Delete remote<br>
+r) Rename remote<br>
+c) Copy remote<br>
+s) Set configuration password<br>
+q) Quit config<br>
+e/n/d/r/c/s/q&gt; q</p>
+<!-- more -->
+<!-- more -->
+<p>3、挂载<br>
+mkdir -p /home/gdrive</p>
+<p>/usr/bin/rclone mount emby: /home/gdrive <br>
+--umask 0000 <br>
+--default-permissions <br>
+--allow-non-empty <br>
+--allow-other <br>
+--buffer-size 32M <br>
+--dir-cache-time 12h <br>
+--vfs-read-chunk-size 64M <br>
+--vfs-read-chunk-size-limit 1G &amp;</p>
+<p>4、查看挂载<br>
+df -h</p>
+<!-- more -->
+<p>5、自动挂载<br>
+cat &gt; /etc/systemd/system/rclone.service &lt;&lt;EOF<br>
+[Unit]<br>
+Description=Rclone<br>
+AssertPathIsDirectory=LocalFolder<br>
+After=network-online.target</p>
+<p>[Service]<br>
+Type=simple<br>
+ExecStart=/usr/bin/rclone mount emby: /home/gdrive <br>
+--umask 0000 <br>
+--default-permissions <br>
+--allow-non-empty <br>
+--allow-other <br>
+--buffer-size 32M <br>
+--dir-cache-time 12h <br>
+--vfs-read-chunk-size 64M <br>
+--vfs-read-chunk-size-limit 1G<br>
+ExecStop=/bin/fusermount -u LocalFolder<br>
+Restart=on-abort<br>
+User=root</p>
+<p>[Install]<br>
+WantedBy=default.target<br>
+EOF</p>
+<!-- more -->
+<p>6、设置启动<br>
+systemctl start rclone</p>
+<!-- more -->
+<p>7、开启启动<br>
+systemctl enable rclone</p>
+<!-- more -->
+<p>8、虚拟内存<br>
+wget https://www.moerats.com/usr/shell/swap.sh &amp;&amp; bash swap.sh</p>
+]]></content>
+    </entry>
+</feed>
